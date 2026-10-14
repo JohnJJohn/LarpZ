@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://df7w6yep880vq"]
 
+[ext_resource type="PackedScene" uid="uid://bnpd0uop2bwba" path="res://Scenes/Player/player.tscn" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://icrfb3rtv3kk" path="res://Scenes/Weapons/Guns/Rifles/Mk2Rifle.tscn" id="2_idj7w"]
+
 [node name="Main" type="Node2D" unique_id=194512550]
+
+[node name="Player" parent="." unique_id=1061772552 instance=ExtResource("1_r150o")]
+
+[node name="Mk2Rifle" parent="." unique_id=1002893047 instance=ExtResource("2_idj7w")]
+position = Vector2(48, 13)

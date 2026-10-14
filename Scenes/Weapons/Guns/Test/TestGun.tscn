@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b1e13nqdvd33w"]
+
+[ext_resource type="Script" uid="uid://dw82h2lv7ysmn" path="res://Scripts/Weapons/Guns/BaseGun/Gun.cs" id="1_chqxn"]
+
+[node name="Gun" type="Node" unique_id=1209605886]
+script = ExtResource("1_chqxn")
+FireType = 3
+FireRate = 1.0
+metadata/_custom_type_script = "uid://dw82h2lv7ysmn"

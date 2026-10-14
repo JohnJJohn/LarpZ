@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://bnpd0uop2bwba"]
+
+[ext_resource type="Script" uid="uid://slbcylpir8ff" path="res://Scripts/Player/Player.cs" id="1_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://cl08b8nup8jem" path="res://Resouces/Textures/HumanBase/South.png" id="2_a3d8c"]
+[ext_resource type="Script" uid="uid://8xoffwqj2pw" path="res://Scripts/Sprites/DirectionalSprite.cs" id="3_xpcdj"]
+[ext_resource type="Texture2D" uid="uid://cv2hmban22tdq" path="res://Resouces/Textures/HumanBase/North.png" id="4_dd0ac"]
+[ext_resource type="Texture2D" uid="uid://don73dmtv23gb" path="res://Resouces/Textures/HumanBase/East.png" id="5_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://brsxs8j40upd0" path="res://Resouces/Textures/HumanBase/West.png" id="6_jlvik"]
+[ext_resource type="Script" uid="uid://djvg5st5qsy7w" path="res://Scripts/Items/ItemHolder.cs" id="7_0u5uq"]
+
+[sub_resource type="Animation" id="Animation_dd0ac"]
+resource_name = "East"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_0u5uq")]
+}
+
+[sub_resource type="Animation" id="Animation_0u5uq"]
+resource_name = "North"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_dd0ac")]
+}
+
+[sub_resource type="Animation" id="Animation_jlvik"]
+resource_name = "South"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_a3d8c")]
+}
+
+[sub_resource type="Animation" id="Animation_gk6dx"]
+resource_name = "West"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_jlvik")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jhyir"]
+_data = {
+&"East": SubResource("Animation_dd0ac"),
+&"North": SubResource("Animation_0u5uq"),
+&"South": SubResource("Animation_jlvik"),
+&"West": SubResource("Animation_gk6dx")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8hbv"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1061772552 groups=["Player"]]
+z_index = 5
+script = ExtResource("1_0u5uq")
+
+[node name="DirectionalSprite" type="Sprite2D" parent="." unique_id=2025756108]
+texture = ExtResource("5_0u5uq")
+script = ExtResource("3_xpcdj")
+IsPlayer = true
+metadata/_custom_type_script = "uid://8xoffwqj2pw"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalSprite" unique_id=1393347290]
+libraries/ = SubResource("AnimationLibrary_jhyir")
+speed_scale = 0.0
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=1311600292]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_a8hbv")
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=728720076]
+zoom = Vector2(3.27, 3.27)
+
+[node name="ItemHolder" type="Node2D" parent="." unique_id=1018631317]
+script = ExtResource("7_0u5uq")
+metadata/_custom_type_script = "uid://djvg5st5qsy7w"

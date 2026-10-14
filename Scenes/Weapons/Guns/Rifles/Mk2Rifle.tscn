@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://icrfb3rtv3kk"]
+
+[ext_resource type="Script" uid="uid://dw82h2lv7ysmn" path="res://Scripts/Weapons/Guns/BaseGun/Gun.cs" id="1_j3ah3"]
+[ext_resource type="Texture2D" uid="uid://bnbh8kaow3emp" path="res://Resouces/Textures/Guns/Rifles/Mk2/icon.png" id="2_7etrj"]
+[ext_resource type="Script" uid="uid://8o0xga2ggw23" path="res://Scripts/Items/Item.cs" id="2_wo8lx"]
+[ext_resource type="Script" uid="uid://c2ol3plmsqcoe" path="res://Scripts/Sprites/DirectionalItemSprite.cs" id="3_7etrj"]
+[ext_resource type="Texture2D" uid="uid://dsc0cx5vel286" path="res://Resouces/Textures/Guns/Rifles/Mk2/North.png" id="4_5a7g6"]
+[ext_resource type="Texture2D" uid="uid://btm3o0pisan5y" path="res://Resouces/Textures/Guns/Rifles/Mk2/WieldedWest.png" id="4_s32xk"]
+[ext_resource type="Texture2D" uid="uid://7n3qy0ijmtld" path="res://Resouces/Textures/Guns/Rifles/Mk2/East.png" id="5_jl7a1"]
+[ext_resource type="Texture2D" uid="uid://b1arid3m3mviw" path="res://Resouces/Textures/Guns/Rifles/Mk2/South.png" id="6_1egf3"]
+[ext_resource type="Texture2D" uid="uid://d30vfcnt6qspe" path="res://Resouces/Textures/Guns/Rifles/Mk2/West.png" id="7_s32xk"]
+[ext_resource type="Texture2D" uid="uid://dbfu7lbusux4p" path="res://Resouces/Textures/Guns/Rifles/Mk2/WieldedEast.png" id="10_5tocr"]
+[ext_resource type="Texture2D" uid="uid://yvqktbl33l0i" path="res://Resouces/Textures/Guns/Rifles/Mk2/WieldedNorth.png" id="11_kvd24"]
+[ext_resource type="Texture2D" uid="uid://bsspy0cfu3h48" path="res://Resouces/Textures/Guns/Rifles/Mk2/WieldedSouth.png" id="12_o2w1e"]
+
+[sub_resource type="Animation" id="Animation_7etrj"]
+resource_name = "HeldEast"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_jl7a1")]
+}
+
+[sub_resource type="Animation" id="Animation_5a7g6"]
+resource_name = "HeldNorth"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_5a7g6")]
+}
+
+[sub_resource type="Animation" id="Animation_jl7a1"]
+resource_name = "HeldSouth"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_1egf3")]
+}
+
+[sub_resource type="Animation" id="Animation_1egf3"]
+resource_name = "HeldWest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_s32xk")]
+}
+
+[sub_resource type="Animation" id="Animation_h34hj"]
+resource_name = "WieldedEast"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_5tocr")]
+}
+
+[sub_resource type="Animation" id="Animation_jiefe"]
+resource_name = "WieldedNorth"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_kvd24")]
+}
+
+[sub_resource type="Animation" id="Animation_v0a5k"]
+resource_name = "WieldedSouth"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_o2w1e")]
+}
+
+[sub_resource type="Animation" id="Animation_vhras"]
+resource_name = "WieldedWest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_s32xk")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s32xk"]
+_data = {
+&"HeldEast": SubResource("Animation_7etrj"),
+&"HeldNorth": SubResource("Animation_5a7g6"),
+&"HeldSouth": SubResource("Animation_jl7a1"),
+&"HeldWest": SubResource("Animation_1egf3"),
+&"WieldedEast": SubResource("Animation_h34hj"),
+&"WieldedNorth": SubResource("Animation_jiefe"),
+&"WieldedSouth": SubResource("Animation_v0a5k"),
+&"WieldedWest": SubResource("Animation_vhras")
+}
+
+[node name="Mk2Rifle" type="Node2D" unique_id=1002893047]
+script = ExtResource("1_j3ah3")
+metadata/_custom_type_script = "uid://dw82h2lv7ysmn"
+
+[node name="Item" type="Sprite2D" parent="." unique_id=813666426]
+texture = ExtResource("2_7etrj")
+script = ExtResource("2_wo8lx")
+Icon = ExtResource("2_7etrj")
+metadata/_custom_type_script = "uid://8o0xga2ggw23"
+
+[node name="DirectionalItemSprite" type="Sprite2D" parent="Item" unique_id=263860242]
+texture = ExtResource("4_s32xk")
+script = ExtResource("3_7etrj")
+metadata/_custom_type_script = "uid://c2ol3plmsqcoe"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Item/DirectionalItemSprite" unique_id=1523222719]
+libraries/ = SubResource("AnimationLibrary_s32xk")
+speed_scale = 0.0

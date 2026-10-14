@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="LarpZ"
+run/main_scene="uid://df7w6yep880vq"
 config/features=PackedStringArray("4.8", "C#", "Forward Plus")
 config/icon="res://Resouces/Textures/icon.svg"
 
 [autoload]
 
 BTGlobalMetrics="*res://addons/takobi_ai/editor/BTGlobalMetrics.cs"
+AudioHost="*res://addons/audio_service/core/AudioHost.cs"
 
 [display]
 
@@ -29,7 +31,7 @@ project/assembly_name="LarpZ"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/takobi_ai/plugin.cfg")
+enabled=PackedStringArray("res://addons/audio_service/plugin.cfg", "res://addons/takobi_ai/plugin.cfg")
 
 [file_customization]
 
@@ -39,6 +41,161 @@ folder_colors={
 "res://Resouces/Textures/": "orange",
 "res://Scenes/": "yellow",
 "res://Scripts/": "teal"
+}
+
+[global_group]
+
+Player="the player"
+
+[input]
+
+MoveLeft={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 65,
+"key_label": 0,
+"unicode": 97,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+MoveRight={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 68,
+"key_label": 0,
+"unicode": 100,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+MoveUp={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 87,
+"key_label": 0,
+"unicode": 119,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+MoveDown={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 83,
+"key_label": 0,
+"unicode": 115,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+FireWeapon={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"button_mask": 0,
+"position": Vector2(0, 0),
+"global_position": Vector2(0, 0),
+"factor": 1.0,
+"button_index": 1,
+"canceled": false,
+"pressed": false,
+"double_click": false,
+"script": null
+)]
+}
+DropItem={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 81,
+"key_label": 0,
+"unicode": 113,
+"location": 0,
+"echo": false,
+"script": null
+)]
+}
+WieldItem={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,
+"resource_local_to_scene": false,
+"resource_name": "",
+"device": -1,
+"window_id": 0,
+"alt_pressed": false,
+"shift_pressed": false,
+"ctrl_pressed": false,
+"meta_pressed": false,
+"pressed": false,
+"keycode": 0,
+"physical_keycode": 90,
+"key_label": 0,
+"unicode": 122,
+"location": 0,
+"echo": false,
+"script": null
+)]
 }
 
 [input_devices]
@@ -51,4 +208,5 @@ joypads/ignore_joypad_on_unfocused_application=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
